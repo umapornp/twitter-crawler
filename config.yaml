@@ -1,0 +1,55 @@
+# ---------------------------
+# CONFIGURATION FOR CRAWLER
+# ---------------------------
+
+# Access Type
+ACADEMIC_ACCESS: True
+
+# Twitter API credentials. ** REPLACE ME **
+CONSUMER_KEY: "<REPLACE_ME>"
+CONSUMER_SECRET: "<REPLACE_ME>"
+ACCESS_TOKEN: "<REPLACE_ME>"
+ACCESS_SECRET: "<REPLACE_ME>"
+BEARER_TOKEN: "<REPLACE_ME>"
+
+# Initial query path and save path.
+INIT_PATH: "query.json"
+SAVE_PATH: "./data"
+
+# Base query. Learn more about how to build queries: https://developer.twitter.com/en/docs/twitter-api/tweets/search/integrate/build-a-query
+QUERY: "lang:en -has:mentions -is:retweet -is:reply -is:nullcast"
+RETWEET_QUERY: "lang:en is:retweet -is:reply -is:nullcast"
+
+# Fields to returns.
+TWEET_FIELDS: ["id", "author_id", "text", "entities", "context_annotations", "lang", "created_at"]
+USER_FIELDS: ["id", "name", "username", "description", "public_metrics", "verified", "protected"]
+EXPANSIONS: ["author_id"]
+
+# Time period.
+# For 'General' access, you can search for the last 7 days only.
+# To search for full-archive tweets, 'Academic Research' access is required.
+START_TIME: "2023-04-18T00:00:00Z"
+END_TIME: "2023-04-24T00:00:00Z"
+
+# Crawl limit for seed tweets.
+INIT_MAX_RESULTS: 10      # Max results for each page.
+INIT_LIMIT: 1             # Paginator page.
+
+# Crawl limit for `follow` interactions.
+FOLLOWING_MAX_RESULTS: 5  # Max results for each page.
+FOLLOWING_LIMIT: 1        # Paginator page.
+
+# Crawl limit for `post` interactions.
+POST_MAX_RESULTS: 10      # Max results for each page.
+POST_LIMIT: 1             # Paginator page.
+
+# Crawl limit for `retweet` interactions.
+RETWEET_MAX_RESULTS: 10   # Max results for each page.
+RETWEET_LIMIT: 1          # Paginator page.
+
+# Crawl limit for `like` interactions.
+LIKE_MAX_RESULTS: 5       # Max results for each page.
+LIKE_LIMIT: 1             # Paginator page.
+
+# Sleep to avoid rate limit (Tweepy docs: https://bit.ly/3L5qxbA).
+SLEEP_TIME: 1
