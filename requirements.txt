@@ -16,4 +16,4 @@ six==1.16.0
 tqdm==4.65.0
 tweepy==4.13.0
 tzdata==2023.3
-urllib3==1.26.15
+urllib3==1.26.17
